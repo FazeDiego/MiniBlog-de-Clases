@@ -6,46 +6,41 @@ Este es un proyecto de React Native desarrollado con Expo que utiliza Redux Tool
 
 Antes de comenzar, asegúrate de tener instalado en tu sistema:
 
-- **Node.js** (versión 14 o superior) - [Descargar aquí](https://nodejs.org/)
+- **Node.js** (versión 18 o superior) - [Descargar aquí](https://nodejs.org/)
 - **npm** (viene incluido con Node.js) o **yarn**
-- **Expo CLI** (se instalará globalmente en el siguiente paso)
+
+**Nota:** A partir de Expo SDK 46+, ya no es necesario instalar Expo CLI de forma global. El CLI viene integrado en el paquete `expo` del proyecto.
 
 ## Instalación
 
 Sigue estos pasos para configurar y ejecutar el proyecto:
 
-### 1. Instalar Expo CLI globalmente
-
-```bash
-npm install -g expo-cli
-```
-
-### 2. Clonar o descargar el proyecto
+### 1. Clonar o descargar el proyecto
 
 Si aún no tienes el proyecto, descárgalo o clónalo en tu máquina local.
 
-### 3. Navegar al directorio del proyecto
+### 2. Navegar al directorio del proyecto
 
 ```bash
 cd TPReactNative1
 ```
 
-### 4. Instalar las dependencias de Node.js
+### 3. Instalar las dependencias de Node.js
 
 Ejecuta el siguiente comando para instalar todas las dependencias del proyecto listadas en `package.json`:
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 
 Este comando instalará las siguientes dependencias:
-- React Native (0.72.6)
-- Expo (~49.0.15)
-- Redux Toolkit (^1.9.7)
-- React Redux (^8.1.3)
-- Expo Status Bar (~1.6.0)
-- Babel y otras dependencias de desarrollo
-
+- React Native (0.74.5)
+- Expo (~51.0.0)
+- Redux Toolkit (^2.2.0)
+- React Redux (^9.1.0)
+- Expo Status Bar (~1.12.0)
+- React DOM (^18.2.0)
+- React Native Web (^0.19.13)
 ## Ejecutar el Proyecto
 
 Una vez instaladas todas las dependencias, puedes ejecutar el proyecto en diferentes plataformas:
@@ -59,6 +54,14 @@ npm start
 o
 
 ```bash
+npx expo start
+```
+
+Esto abrirá Expo DevTools en tu terminal, donde podrás elegir cómo ejecutar la aplicación presionando las teclas correspondientes:
+- Presiona `w` para abrir en web
+- Presiona `a` para abrir en Android
+- Presiona `i` para abrir en iOS
+- Escanea el código QR con Expo Go para ejecutar en tu dispositivo móvil
 expo start
 ```
 
@@ -123,26 +126,28 @@ TPReactNative1/
     │       └── postsSlice.js    # Slice de Redux para posts
     ├── screens/
     │   └── HomeScreen.js        # Pantalla principal
-    └── store/
-        └── store.js             # Configuración del store de Redux
-```
-
 ## Tecnologías Utilizadas
 
+- **React Native** 0.74.5 - Framework para desarrollo de aplicaciones móviles
+- **Expo** ~51.0.0 - Plataforma para desarrollo y despliegue de aplicaciones React Native
+- **Redux Toolkit** ^2.2.0 - Herramienta para el manejo del estado de la aplicación
+- **React Redux** ^9.1.0 - Integración de Redux con React
+- **React Native Web** ^0.19.13 - Soporte para ejecución en navegadores web
 - **React Native** 0.72.6 - Framework para desarrollo de aplicaciones móviles
 - **Expo** ~49.0.15 - Plataforma para desarrollo y despliegue de aplicaciones React Native
-- **Redux Toolkit** ^1.9.7 - Herramienta para el manejo del estado de la aplicación
-- **React Redux** ^8.1.3 - Integración de Redux con React
-
-## Solución de Problemas
-
 ### Error: "Metro bundler error"
 ```bash
 # Limpiar la caché y reiniciar
-expo start -c
+npx expo start -c
 ```
 
-### Error: "Dependencies not found"
+### Error: "Dependencies not found" o conflictos de versiones
+```bash
+# Eliminar node_modules y reinstalar
+rm -rf node_modules
+rm package-lock.json
+npm install --legacy-peer-deps
+``` Error: "Dependencies not found"
 ```bash
 # Eliminar node_modules y reinstalar
 rm -rf node_modules
