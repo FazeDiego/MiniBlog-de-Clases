@@ -85,8 +85,6 @@ const HomeScreen = () => {
       <FlatList
         data={items}
         keyExtractor={(item, index) => {
-          // se usa una combinación de ID y timestamp para garantizar unicidad
-          // Especialmente para posts creados localmente que pueden tener IDs duplicados
           return `post-${item.id}-${index}`;
         }}
         renderItem={({ item }) => (
@@ -128,16 +126,16 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 40 },
-  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 12 },
+  container: { flex: 1, padding: 16, paddingTop: 40 }, // Ajuste de paddingTop para evitar notch
+  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 12 }, // Título de la app
   card: {
     padding: 8,
     marginBottom: 8,
     borderWidth: 1,
     borderRadius: 4,
   },
-  title: { fontWeight: 'bold', marginBottom: 4 },
-  empty: { textAlign: 'center', marginTop: 16, fontStyle: 'italic' },
+  title: { fontWeight: 'bold', marginBottom: 4 }, // Título de cada publicación
+  empty: { textAlign: 'center', marginTop: 16, fontStyle: 'italic' }, // Mensaje cuando no hay publicaciones
   form: { marginTop: 16 },
   formTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 8 },
   input: {

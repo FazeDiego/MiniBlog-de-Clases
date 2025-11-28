@@ -1,8 +1,8 @@
 # TPReactNative - Proyecto React Native con Redux
 
-Este es un proyecto de React Native desarrollado con Expo que utiliza Redux Toolkit para el manejo del estado.
+Este es un proyecto de React Native desarrollado con Expo que utiliza Redux Toolkit para el manejo del estado de la aplicación.
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 Antes de comenzar, asegúrate de tener instalado en tu sistema:
 
@@ -10,7 +10,7 @@ Antes de comenzar, asegúrate de tener instalado en tu sistema:
 - **npm** (viene incluido con Node.js) o **yarn**
 - **Expo CLI** (se instalará globalmente en el siguiente paso)
 
-## 🚀 Instalación
+## Instalación
 
 Sigue estos pasos para configurar y ejecutar el proyecto:
 
@@ -38,7 +38,7 @@ Ejecuta el siguiente comando para instalar todas las dependencias del proyecto l
 npm install
 ```
 
-Este comando instalará:
+Este comando instalará las siguientes dependencias:
 - React Native (0.72.6)
 - Expo (~49.0.15)
 - Redux Toolkit (^1.9.7)
@@ -46,7 +46,7 @@ Este comando instalará:
 - Expo Status Bar (~1.6.0)
 - Babel y otras dependencias de desarrollo
 
-## 📱 Ejecutar el Proyecto
+## Ejecutar el Proyecto
 
 Una vez instaladas todas las dependencias, puedes ejecutar el proyecto en diferentes plataformas:
 
@@ -71,9 +71,9 @@ npm run android
 ```
 
 **Requisitos para Android:**
-- Tener Android Studio instalado con un emulador configurado, O
-- Tener un dispositivo Android físico conectado con depuración USB habilitada, O
-- Usar la app Expo Go en tu dispositivo móvil (escanea el código QR)
+- Tener Android Studio instalado con un emulador configurado, o
+- Tener un dispositivo Android físico conectado con depuración USB habilitada, o
+- Usar la aplicación Expo Go en tu dispositivo móvil (escaneando el código QR)
 
 ### Opción 3: Ejecutar en iOS (solo macOS)
 
@@ -94,22 +94,22 @@ npm run web
 
 Esto abrirá la aplicación en tu navegador web predeterminado.
 
-## 📱 Usar Expo Go (Recomendado para pruebas rápidas)
+## Usar Expo Go (Recomendado para pruebas rápidas)
 
-1. **Instala Expo Go** en tu dispositivo móvil:
+1. **Instalar Expo Go** en tu dispositivo móvil:
    - [Android - Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
    - [iOS - App Store](https://apps.apple.com/app/expo-go/id982107779)
 
-2. **Ejecuta el proyecto:**
+2. **Ejecutar el proyecto:**
    ```bash
    npm start
    ```
 
-3. **Escanea el código QR:**
-   - En Android: abre la app Expo Go y escanea el código QR
-   - En iOS: abre la cámara y escanea el código QR
+3. **Escanear el código QR:**
+   - En Android: abrir la aplicación Expo Go y escanear el código QR mostrado en la terminal
+   - En iOS: abrir la cámara y escanear el código QR mostrado en la terminal
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 TPReactNative1/
@@ -127,43 +127,47 @@ TPReactNative1/
         └── store.js             # Configuración del store de Redux
 ```
 
-## 🔧 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
-- **React Native** 0.72.6 - Framework para desarrollo móvil
-- **Expo** ~49.0.15 - Plataforma para desarrollo rápido
-- **Redux Toolkit** ^1.9.7 - Manejo del estado de la aplicación
+- **React Native** 0.72.6 - Framework para desarrollo de aplicaciones móviles
+- **Expo** ~49.0.15 - Plataforma para desarrollo y despliegue de aplicaciones React Native
+- **Redux Toolkit** ^1.9.7 - Herramienta para el manejo del estado de la aplicación
 - **React Redux** ^8.1.3 - Integración de Redux con React
 
-## 🐛 Solución de Problemas
+## Solución de Problemas
 
 ### Error: "Metro bundler error"
 ```bash
-# Limpia la caché y reinicia
+# Limpiar la caché y reiniciar
 expo start -c
 ```
 
 ### Error: "Dependencies not found"
 ```bash
-# Elimina node_modules y reinstala
+# Eliminar node_modules y reinstalar
 rm -rf node_modules
 npm install
 ```
 
 ### Error en Android: "SDK location not found"
-- Asegúrate de tener Android Studio instalado y configurado correctamente
-- Configura la variable de entorno ANDROID_HOME
+- Asegurarse de tener Android Studio instalado y configurado correctamente
+- Configurar la variable de entorno ANDROID_HOME
 
-## 📝 Scripts Disponibles
+## Scripts Disponibles
 
 - `npm start` - Inicia el servidor de desarrollo de Expo
-- `npm run android` - Ejecuta la app en Android
-- `npm run ios` - Ejecuta la app en iOS (solo macOS)
-- `npm run web` - Ejecuta la app en el navegador
+- `npm run android` - Ejecuta la aplicación en Android
+- `npm run ios` - Ejecuta la aplicación en iOS (solo macOS)
+- `npm run web` - Ejecuta la aplicación en el navegador
 
-## 📄 Licencia
+## Notas Adicionales
 
-Este proyecto es privado y está destinado para fines educativos.
+Este proyecto es de uso educativo. Al entregar el proyecto, no es necesario incluir la carpeta `node_modules` ni `.expo`, ya que estas se regeneran automáticamente con el comando `npm install`. El archivo `package.json` es esencial y debe ser incluido siempre.
+
+## Licencia
+
+Este proyecto está destinado para fines educativos.
 
 ---
 
-**¿Necesitas ayuda?** Si encuentras algún problema durante la instalación o ejecución, asegúrate de tener todas las dependencias instaladas correctamente y que tu versión de Node.js sea compatible.
+Para cualquier problema durante la instalación o ejecución, verificar que todas las dependencias estén instaladas correctamente y que la versión de Node.js sea compatible con el proyecto.

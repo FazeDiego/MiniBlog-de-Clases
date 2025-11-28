@@ -47,11 +47,10 @@ const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    // Si quisieras agregar acciones síncronas locales, van acá.
   },
   extraReducers: (builder) => {
     builder
-      // GET
+      // obtener posts (GET)
       .addCase(fetchPosts.pending, (state) => {
         state.status = 'loading';
         state.error = null;
@@ -65,15 +64,13 @@ const postsSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message;
       })
-      // POST
+          // crear post (POST)
       .addCase(addPost.pending, (state) => {
         state.status = 'loading';
         state.error = null;
       })
       .addCase(addPost.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // Como JSONPlaceholder no guarda realmente, agregamos el post al estado local
-        // Generamos un ID único basado en timestamp para evitar conflictos
         const newPost = {
           ...action.payload,
           id: action.payload.id || Date.now(),
